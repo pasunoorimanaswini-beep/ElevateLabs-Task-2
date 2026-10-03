@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My To-Do List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <div>
+      <h1>My To-Do List</h1>
+      <p id="date" class="date"></p>
+    </div>
+    <div class="ring" title="Progress">
+      <svg viewBox="0 0 44 44" width="76" height="76" aria-hidden="true">
+        <circle cx="22" cy="22" r="18" class="track"/>
+        <circle cx="22" cy="22" r="18" class="prog" id="prog"/>
+      </svg>
+      <b id="pct">0%</b>
+    </div>
+    <button id="theme" class="icon" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <form id="form" autocomplete="off">
+    <input id="text" type="text" placeholder="Add a new task…" maxlength="120" required aria-label="New task">
+    <select id="priority" aria-label="Priority">
+      <option value="low">Low</option>
+      <option value="med" selected>Medium</option>
+      <option value="high">High</option>
+    </select>
+    <input id="due" type="date" aria-label="Due date">
+    <button type="submit" class="add">+ Add task</button>
+  </form>
+
+  <nav class="tabs" id="tabs">
+    <button data-f="all" class="on">All</button>
+    <button data-f="open">Pending</button>
+    <button data-f="done">Completed</button>
+  </nav>
+
+  <ul id="list"></ul>
+
+  <footer class="foot">
+    <span id="count"></span>
+    <button id="clear" class="link">Delete completed</button>
+  </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
